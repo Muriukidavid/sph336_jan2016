@@ -1,18 +1,25 @@
-calc:
+objects= calc tempcalc test
+
+build: $(objects)
+
+calc:calc.cc calc.h
 	g++ calc.cc -o calc
 	./calc
-tempcalc:
+
+tempcalc:tempcalc.cc tempcalc.h
 	g++ tempcalc.cc -o tempcalc
 	./tempcalc
-testbuild:test.cc
-	@echo building testrun...
-	g++ test.cc -o testbin
-testrun:testbuild
-	./testbin 23
+
+test:test.cc
+	g++ test.cc -o test1
+	./test1
+
+.PHONY: build calc tempcalc test1
+
 clean:
-	rm -f testbin
-	rm -f *.o
-	rm -f *~  
-all:clean testrun
-.PHONY:calc tempcalc
+	rm *~
+	rm *.o
+	rm test1	
+	rm tempcalc
+	rm calc
 
