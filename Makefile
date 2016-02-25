@@ -1,18 +1,25 @@
-calc:
-	g++ calc.cc -o calc
-	./calc
-tempcalc:
-	g++ tempcalc.cc -o tempcalc
-	./tempcalc
-testbuild:test.cc
-	@echo building testrun...
+testbin:test.cc
 	g++ test.cc -o testbin
-testrun:testbuild
-	./testbin 23
-clean:
-	rm -f testbin
-	rm -f *.o
-	rm -f *~  
-all:clean testrun
-.PHONY:calc tempcalc
 
+calcbin:calc.cc
+	g++ calc.cc -o calcbin
+	
+tempbin:tempcalc.cc
+	g++ tempcalc.cc -o tempbin
+	
+	@echo ---------OUTPUT OF TEST.CC---------
+	./testbin
+	@echo --------OUTPUT OF CALC.CC----------
+	./calcbin
+	@echo --------OUTPUT OF TEMPCALC.CC---------
+	./tempbin
+
+clean:testbin calcbin tempbin
+	rm -f calcbin
+	rm -f testbin
+	rm -f tempbin
+	rm -f *.o
+	rm -f *~
+all:clean testbin calcbin tempbin
+
+.PHONY:testbin calcbin tempbin
