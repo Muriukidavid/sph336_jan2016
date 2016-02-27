@@ -13,6 +13,6 @@ clean:
 	rm -f testbin
 	rm -f *.o
 	rm -f *~  
-all:clean testrun
+all:clean testrun calc tempcalc
 .PHONY:calc tempcalc
 
