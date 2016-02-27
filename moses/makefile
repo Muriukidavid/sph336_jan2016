@@ -1,4 +1,5 @@
-all : calc tempcalc	
+all : calc tempcalc
+	
 .PHONY : calc tempcalc
 tempcalc:tempcalc.cc
 	g++ tempcalc.cc -o tempcalc
