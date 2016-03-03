@@ -16,9 +16,11 @@
 #	rm  -f *~*
 #	rm  -f testbin
 #.PHONY:calc tempcalc
-compileall:
-	@echo compile all files...
-	g++ test.cc -o test
-	g++ tempcalc.cc -o tempcalc
-	g++ calc.cc -o calc
  
+CC = gcc
+CFLAGS = -g -O2 -std=gnu99 -static -Wall -Wextra -Isrc -rdynamic -fomit-frame-pointer
+all: $(patsubst %.c, %.out, $(wildcard *.c))
+%.out: %.c Makefile
+    $(CC) $(CFLAGS) $< -o $@ -lm
+clean:
+    rm *.out
