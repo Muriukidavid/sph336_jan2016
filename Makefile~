@@ -1,4 +1,3 @@
-all:calc tempcalc testbuild testrun
 calc:
 	g++ calc.cc -o calc
 	./calc
@@ -14,6 +13,6 @@ clean:
 	rm -f testbin
 	rm -f *.o
 	rm -f *~  
-	rm calc tempcalc
+all:clean testrun
 .PHONY:calc tempcalc
 
