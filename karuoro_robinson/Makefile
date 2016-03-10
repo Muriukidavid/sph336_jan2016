@@ -16,8 +16,7 @@ test:test.cc
 
 .PHONY: build calc tempcalc test1
 
-clean:
-	rm *~
+clean:	rm *~
 	rm *.o
 	rm test1	
 	rm tempcalc
