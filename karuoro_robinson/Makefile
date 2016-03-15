@@ -19,5 +19,5 @@ test:test.cc
 clean:	rm *~
 	rm *.o
 	rm test1	
-	rm tempcalc
-	rm calc
+	rm tempcalc	
+    rm calc
