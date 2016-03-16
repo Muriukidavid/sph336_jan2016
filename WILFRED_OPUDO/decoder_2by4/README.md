@@ -26,9 +26,7 @@ Results:
 The above MOC was implemented in systemc (code in this folder) and the following output found from traced signals.<br>
 Traced signals timing diagram:
 <p align="left">
-  <img src="2by4timer.png.png" width="400"/>
+  <img src="2by4timer.png" width="600"/>
 <p>
 
-Tutorial 2:
-Create a decoder_2by4 based on this decoder_1by2.<br>
-hint: systemc modules can be cascaded to build more complex modules.
+
