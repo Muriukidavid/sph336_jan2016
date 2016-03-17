@@ -2,7 +2,8 @@
  * monitor.h
  *
  *  Created on: Mar 17, 2016
- *      Author:kelvin gitau mwangi
+ *      Author:kelvin gitau.
+        
  */
 
 #ifndef MONITOR_H_

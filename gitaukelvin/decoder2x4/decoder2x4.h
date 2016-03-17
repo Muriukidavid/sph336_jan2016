@@ -2,7 +2,7 @@
  * decoder2x4.h
  *
  *  Created on: Mar 17, 2016
- *      Author: kelvin gitau mwangi
+ *      Author: kelvin gitau mwangi.
  */
 
 #ifndef DECODER_H_
