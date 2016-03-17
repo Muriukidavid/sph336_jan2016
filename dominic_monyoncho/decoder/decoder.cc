@@ -2,7 +2,11 @@
  * decoder.cc
  *
  *  Created on: 17th March 2016
+<<<<<<< HEAD
  *  Author: i39/2440/2014
+=======
+ *  Author: I39/2440/2014
+>>>>>>> 332c22e4b798862fdd68629d110c6c54dccd177c
  */
 
 #include"decoder.h"
