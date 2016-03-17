@@ -1,5 +1,3 @@
-#ifndef DECODER_2BY4_H_
-#define DECODER_2BY4_H_
 #include<systemc.h>
 
 SC_MODULE(decoder){
