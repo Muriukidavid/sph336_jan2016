@@ -1,8 +1,8 @@
 /*
  * decoder.h
  *
- *  eated on: 17th March 2016
- *      Author: i39/2440/2014
+ *  created on: 17th March 2016
+ *  Author: i39/2440/2014
  */
 
 #ifndef DECODER_H_

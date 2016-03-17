@@ -1,8 +1,8 @@
 /*
  * monitor.h
  *
- *  Created on: 17th March 2016
- *      Author: i39/2440/2014
+ *  Created on:17th March 2016
+ *      Author:i39/2440/2014
  */
 
 #ifndef MONITOR_H_
