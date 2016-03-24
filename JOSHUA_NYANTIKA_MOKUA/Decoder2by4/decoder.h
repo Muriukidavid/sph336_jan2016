@@ -1,3 +1,10 @@
+/*
+ * decoder.h
+ *
+ * Created on: Mar 16, 2016
+ *     Author: mokua
+ */
+
 #include<systemc.h>
 
 SC_MODULE(decoder){
