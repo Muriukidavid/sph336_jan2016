@@ -1,0 +1,58 @@
+Joshua Nyantika
+I39/2129/2012
+Tutorial 2
+
+2 by 4 Decoder
+
+
+The 2 by 4 decoder changes input code into a set of signals.
+This decoder is a combination of two 1 by 2 decoders, with two inputs and four outputs.
+
+
+
+Truth table
+
+
+
+
+
+
+
+
+
+
+
+
+
+Circuit
+
+
+
+
+
+
+
+
+
+
+
+
+Model of computation
+
+
+
+
+
+
+
+
+
+
+
+Traced signals timing diagram
+
+
+
+
+
+
