@@ -21,3 +21,5 @@ clean:	rm *~
 	rm test1	
 	rm tempcalc	
     rm calc    
+
+
