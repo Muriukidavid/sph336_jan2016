@@ -11,8 +11,7 @@
 #include<systemc>
 
 SC_MODULE(driver){
-sc_out<bool> d_a1;
-sc_out<bool> d_a2;
+sc_out<bool> d_a;
 
 SC_CTOR(driver){
 	SC_THREAD(drive);
@@ -20,19 +19,15 @@ SC_CTOR(driver){
 
 void drive(void){
 	while(1){
-		d_a1=0;
-                d_a2=0;
+	
+		d_a=0;
 		wait(5,SC_NS);
-		d_a1=0;
-		d_a2=1;
+		d_a=0;
 		wait(5,SC_NS);
-		d_a1=1;
-		d_a2=0;
+		d_a=1;
 		wait(5,SC_NS);
-		d_a1=1;
-		d_a2=1;
+			d_a=1;
 		wait(5,SC_NS);
-		
 	}
 }
 };

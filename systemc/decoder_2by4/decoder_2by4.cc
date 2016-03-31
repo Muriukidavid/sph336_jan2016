@@ -4,7 +4,7 @@
  *  Created on: Mar 4, 2016
  *      Author: karibe
  */
-#include"decoder_2by4.h"
+#include"dec2by4.h"
 #include"driver.h"
 #include"monitor.h"
 #include<systemc.h>
@@ -18,10 +18,11 @@ driver dr("driver");
 monitor mn("monitor");
 //interconnections b2in modules
 dr.d_a1(in1);
-dr.d_a2(in2);
 dec.a1(in1);
-dec.a2(in2);
 mn.m_a1(in1);
+
+dr.d_a2(in2);
+dec.a2(in2);
 mn.m_a2(in2);
 
 dec.d1(out1);
@@ -41,12 +42,12 @@ sc_trace_file *tf;
 tf = sc_create_vcd_trace_file("timing_diagram");
 tf->set_time_unit(1, SC_NS);
 //trace the signals interconnecting modules
-sc_trace(tf, in1, "binary_input"); // signals to be traced
-sc_trace(tf, in2, "binary_input");
-sc_trace(tf, out1, "input_is_one");
-sc_trace(tf, out2, "input_is_zero");
-sc_trace(tf, out3, "input_is_zero");
-sc_trace(tf, out4, "input_is_zero");
+sc_trace(tf, in1, "binary_input1"); // signals to be traced
+sc_trace(tf, in2, "binary_input2");
+sc_trace(tf, out1, "D0");
+sc_trace(tf, out2, "D1");
+sc_trace(tf, out3, "D2");
+sc_trace(tf, out4, "D3");
 
 
 //run a simulation for 20 systemc nano-seconds
