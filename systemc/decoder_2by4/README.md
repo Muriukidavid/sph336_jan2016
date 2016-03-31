@@ -1,5 +1,5 @@
-Name : Mwai Moses Muraguri 
-reg no :i39/4458/2014
+Name : Agatha Doreen Leonards
+reg no :i39/2474/2014
  
 A 2 by 4 decoder takes two inputs and produces 4 outputs.
 It is normally made by combining 2 1 by 2 decoders.
@@ -17,5 +17,5 @@ Circuit:
 
 Model of computation:
 <p align="left">
-  <img src="MOC.png" width="400"/>
+  <img src="moc1_agatha.png" width="400"/>
 </p>
