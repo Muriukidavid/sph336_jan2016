@@ -13,7 +13,7 @@
 using namespace std;
 
 SC_MODULE(monitor){
-sc_in<bool> m_A, m_B,m_output1, m_output2, m_output3, m_output4;
+sc_in<bool> m_a, m_b,m_output1, m_output2, m_output3, m_output4;
 
 SC_CTOR(monitor){
 	SC_METHOD(monita);
@@ -22,7 +22,7 @@ SC_CTOR(monitor){
 }
 
 void monita(void){
-cout<<"at "<<sc_time_stamp()<<" input is: "<<m_A<<" and "<<m_B<<" outputs are: "<<m_output1<<", "<<m_output2<<", "<<m_output3<<" and "<<m_output4<<endl;
+cout<<"at "<<sc_time_stamp()<<" input is: "<<m_a<<" and "<<m_b<<" outputs are: "<<m_output1<<", "<<m_output2<<", "<<m_output3<<" and "<<m_output4<<endl;
 }
 };
 #endif /* MONITOR_H_ */

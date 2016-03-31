@@ -17,13 +17,13 @@ decoder dec("decoder_instance");
 driver dr("driver");
 monitor mn("monitor");
 //interconnections between modules
-dr.d_A(inp1);
-dec.A(inp1);
-mn.m_A(inp1);
+dr.d_a(inp1);
+dec.a(inp1);
+mn.m_a(inp1);
 
-dr.d_B(inp2);
-dec.B(inp2);
-mn.m_B(inp2);
+dr.d_b(inp2);
+dec.b(inp2);
+mn.m_b(inp2);
 
 dec.output1(out1);
 mn.m_output1(out1);

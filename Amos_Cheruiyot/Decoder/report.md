@@ -20,14 +20,13 @@ In the truth table above, we see that the 2 to four decoder takes 2 inputs: A an
 
 The model of computation  for our decoder
 <p align="left">
-	<img src="moc1.png">
+	<img src="moc.png">
 </p>
 <h3>Implementation</h3>
 Using our model of computation, we implemented the decoder in systemc using code and simulation.<br>
 Driver- Provided the 2 signals that were to be decoded.<br>
-decoder-The signals from the driver were used as inputs and 		interpreted into output signals<br>
+decoder-The signals from the driver were used as inputs and interpreted into output signals<br>
 monitor- This module monitored output and input to inspect the functioning of the decoder model.<br>
-By adding more inputs and more outputs, we were able to modify the 1by2 decoder to obtain this 2by4 decoder.<br>
 
 The simulation  using GTK-Wave  :
 
