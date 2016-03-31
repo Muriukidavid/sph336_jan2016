@@ -13,7 +13,7 @@ int sc_main(int argc, char *argv[]){
 //some signals for interconnections
 sc_signal<bool> in1, in2, out1, out2,out3,out4;
 //module instances
-decoder dec("decoder_instance");
+decoder2 dec("decoder2_instance");
 driver dr("driver");
 monitor mn("monitor");
 //interconnections b2in modules
