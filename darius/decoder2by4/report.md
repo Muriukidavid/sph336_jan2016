@@ -38,7 +38,7 @@ Traced signals timing diagram:
   <img src="timing_diagram.png" width="400"/>
 <p>
 Terminal results are:
-//Screenshot from 2016-03-16 22-38-42
+
 <p align="left">
   <img src="Screenshot from 2016-03-16 22-38-42.png" width="400"/>
 <p>
