@@ -1,61 +1,50 @@
-/*
- * decoder_2by4.cc
- *
- *  Created on: Mar 15, 2016
- *      Author: WanjohiSammy
- */
-#include"decoder_2by4.h"
-#include"driver.h"
-#include"monitor.h"
-#include<systemc.h>
+//File: decoder_top.cpp
 
-int sc_main(int argc, char *argv[]){
-//some signals for interconnections
-sc_signal<bool> in1, in2, out1, out2, out3, out4;
+#ifndef DECODER_2BY4_CC_
+#define DECODER_2BY4_CC_
+
+#include "driver.h"
+#include "monitor.h"
+#include "decoder_2by4.h"
+#include <systemc.h>
+
+int sc_main(int argc, char* argv[])
+{
 //module instances
-decoder dec("decoder_instance");
+decoder dec("decoder");
 driver dr("driver");
-monitor mn("monitor");
-//interconnections b2in modules
-dr.d_a(in1);
-dec.a(in1);
-mn.m_a(in1);
+monitor mn ("Monitor");	
 
-dr.d_b(in2);
-dec.b(in2);
-mn.m_b(in2);
-
-dec.c(out1);
-mn.m_c(out1);
-
-dec.d(out2);
-mn.m_d(out2);
-
-dec.e(out3);
-mn.m_e(out3);
-
-dec.f(out4);
-mn.m_f(out4);
-
+sc_signal<bool> t_enable; 
+sc_signal<sc_uint<2> > t_select;
+sc_signal<sc_lv<4> > t_z;
+ 
+dec.de_enable(t_enable);
+dec.de_select(t_select);
+dec.z(t_z); 
+ 
+dr.d_enable(t_enable);
+dr.d_select(t_select);  
+ 
+mn.m_select(t_select); 
+mn.m_enable(t_enable);
+mn.m_z(t_z); 
+ 
 //create a trace file with nanosecond resolution
 sc_trace_file *tf;
 tf = sc_create_vcd_trace_file("timing_diagram");
 tf->set_time_unit(1, SC_NS);
-//trace the signals interconnecting modules
-sc_trace(tf, in1, "binary_input1"); // signals to be traced
-sc_trace(tf, in2, "binary_input2");
-sc_trace(tf, out1, "input1_is_zero_input2_is_zero");
-sc_trace(tf, out2, "input1_is_zero_input2_is_one");
-sc_trace(tf, out3, "input1_is_one_input2_is_zero");
-sc_trace(tf, out4, "input1_is_one_input2_is_one");
 
-//run a simulation for 50 systemc nano-seconds
+sc_trace(tf, t_select, "A");
+sc_trace(tf, t_z, "D");
+sc_trace(tf, t_enable, "EN");
+ 
+//run a simulation for 20 systemc nano-seconds
 if( !sc_pending_activity() )
-sc_start(25,SC_NS);
+sc_start(20, SC_NS);
 //close the trace file
 sc_close_vcd_trace_file(tf);
-return 0;
+
+return(0); 
 }
-
-
-
+#endif

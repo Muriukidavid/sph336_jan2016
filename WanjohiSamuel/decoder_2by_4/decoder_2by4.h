@@ -1,39 +1,34 @@
-/*
- * decoder_2by4.h
- *
- *  Created on: Mar 4, 2016
- *      Author: karibe
- */
+//File : decoder2_by4.h
 
 #ifndef DECODER_2BY4_H_
 #define DECODER_2BY4_H_
-#include<systemc.h>
-
-SC_MODULE(decoder){
+#include <systemc.h>
+ 
+SC_MODULE(decoder) {
 //input and output ports
-sc_in<bool> a,b;
-sc_out<bool> c,d,e,f;
-//constructor: where the processes are bound to simulation kernel
+sc_in<bool>de_enable;
+sc_in<sc_uint<2> >de_select;
+sc_out<sc_lv<4> >z;
+ 
 SC_CTOR(decoder){
-	SC_METHOD(decode);
-	sensitive<<a;
-	sensitive<<b;
-	//dont_initialize();
-}
-
-~decoder(){
-//delete stuff :P
+SC_METHOD(decode); 
+sensitive<<de_enable<<de_select;
 }
 
 void decode(void){
-	c=(a==0 && b==0)?1:0;
-	d=(a==0 && b==1)?1:0;
-	e=(a==1 && b==0)?1:0;
-	f=(a==1 && b==1)?1:0;
+
+if(de_enable==0)
+{
+switch(de_select.read())
+{
+case 0: z = 0; break;
+case 1: z = 1; break;
+case 2: z = 2; break;
+case 3: z = 3; break;
 }
-};
-
-
-
-
-#endif /* DECODER_2BY4_H_ */
+}
+else
+	z=1111;
+}
+}; 
+#endif
