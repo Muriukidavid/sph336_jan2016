@@ -39,5 +39,5 @@ Traced signals timing diagram:
 
 results of the terminal after calling the command make all is in the terminal picture:
 <p align="left">
-  <img src="screenshot.png" width="400"/>
+  <img src="Screenshot.png" width="400"/>
 <p>
