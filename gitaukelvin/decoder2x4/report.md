@@ -18,7 +18,7 @@ In the following truth table, only the output Y0 is high when BOTH inputs are ze
 
 Its truth table: 
 <p align="left">
-  <img src="slide_5.png" width="250"/>
+  <img src="slide_5.jpg" width="250"/>
 </p>
 
 Circuit:
