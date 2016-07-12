@@ -5,16 +5,32 @@
  * see the LICENCE file
  */
 
-#include "main.h"
+#include"MK60DZ10.h"
+#include"gpio.h"
+#include"uart.h"
+extern int periph_clk_khz;
+extern void SystemInit(void);
+void delay(void);
 
 int main(void){
+	uint8_t blink=0, data;
 	//initialize system
 	SystemInit();
+	//initialize ports
+	gpio_init();
+	//initialize a serial port
+	init_uart(UART5_BASE_PTR,periph_clk_khz,115200);
 
 	//Loop forever
 	while(1)
 	{
-		delay();// se a breakpoint here
+		if(blink)
+			toggle_LEDS();
+		if(data_available()){
+			data = uart_read();
+			uartsend(data);
+		}
+		delay();	
 	}
 }
 
@@ -27,7 +43,7 @@ void delay(void)
 
   for(i=0; i<1000; i++)
   {
-	for(j=0; j<300; j++)
+	for(j=0; j<3000; j++)
       __asm__("nop");
   }
 }

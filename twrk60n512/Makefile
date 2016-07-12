@@ -14,7 +14,7 @@ LD = $(TOOLCHAIN)gcc
 OBJCP = $(TOOLCHAIN)objcopy
 AR = $(TOOLCHAIN)ar
 GDB = $(TOOLCHAIN)gdb
-GDBSERVER = openocd -c "interface osbdm" -f /opt/openocd/share/openocd/scripts/board/twr-k60n512.cfg
+GDBSERVER = openocd_osbdm -d 0 -c "interface osbdm" -f /usr/local/share/openocd/scripts/board/twr-k60n512.cfg
 OPENOCDPID = $(shell pgrep openocd)
 
 # application specific
@@ -39,7 +39,7 @@ else
 	OBJ_FOLDER = $(strip $(OUT_DIR))/
 endif
 
-COMPILER_OPTIONS = -O0 -g -ggdb -Wall -fno-strict-aliasing -fmessage-length=0 -fno-builtin -m$(INSTRUCTION_MODE) -mcpu=$(CPU) -MD -MP
+COMPILER_OPTIONS = -O3 -ggdb -Wall -fno-strict-aliasing -fmessage-length=0 -fno-builtin -m$(INSTRUCTION_MODE) -mcpu=$(CPU) -MD -MP
 
 DEPEND_OPTS = -MF $(OBJ_FOLDER)$(@F:.o=.d)
 
@@ -89,7 +89,9 @@ $(OBJ_FOLDER)%.o : %.s
 # TODO: generate assembly lisiting
 debug: all
 ifeq ($(OPENOCDPID), ) # start openocd if not already running
-	$(GDBSERVER) &
+	#$(GDBSERVER) &
+	@echo "error: openocd server not running"
+	exit()
 endif
 	$(GDB) -q -x .gdbcmds 
 	 
