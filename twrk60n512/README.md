@@ -1,2 +1,2 @@
-# sph406_june2016
-A repo for SPH406 Class of June 2016 lab 
+# sph336_june2016 LAB
+A folder for TWR-K60N512 KIT
