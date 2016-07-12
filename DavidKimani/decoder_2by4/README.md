@@ -20,7 +20,7 @@ The following is the truth table,
 
 Circuit:
 <p align="left">
-  <img src="circuit.gif" width="200"/>
+  <img src="circuit.png" width="200"/>
 </p>
 
 Model of computation:
