@@ -2,7 +2,11 @@ GTKWAVE:=$(which gtkwave)
 
 all: decoder
 
+<<<<<<< HEAD
 decoder:prerequisites decoder_1by2.cc
+=======
+decoder:prerequisites decoder.cc
+>>>>>>> 65e29030c0ceeec85987df59ac95aeb758835045
 	@echo 'building file $(@F)'
 	$(CXX) -I/usr/local/systemc-2.3.1/include -O0 -g3 -Wall -c decoder_1by2.cc
 	$(CXX) -L/usr/local/systemc-2.3.1/lib-linux64 -o "decoder" decoder_1by2.o -lsystemc

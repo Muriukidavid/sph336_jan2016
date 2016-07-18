@@ -4,7 +4,11 @@
  *  Created on: Mar 4, 2016
  *      Author: karibe
  */
+<<<<<<< HEAD
 #include"decoder_1by2.h"
+=======
+#include"decoder_2by4.h"
+>>>>>>> 65e29030c0ceeec85987df59ac95aeb758835045
 #include"driver.h"
 #include"monitor.h"
 #include<systemc.h>
@@ -33,8 +37,13 @@ tf = sc_create_vcd_trace_file("timing_diagram");
 tf->set_time_unit(1, SC_NS);
 //trace the signals interconnecting modules
 sc_trace(tf, in, "binary_input"); // signals to be traced
+<<<<<<< HEAD
 sc_trace(tf, out1, "output1");
 sc_trace(tf, out2, "output2");
+=======
+sc_trace(tf, out1, "input_is_zero");
+sc_trace(tf, out2, "input_is_one");
+>>>>>>> 65e29030c0ceeec85987df59ac95aeb758835045
 
 //run a simulation for 20 systemc nano-seconds
 if( !sc_pending_activity() )
