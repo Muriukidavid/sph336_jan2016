@@ -4,7 +4,7 @@
  *  Created on: Mar 4, 2016
  *      Author: karibe
  */
-#include"decoder_1by2.h"
+#include"decoder_2by4.h"
 #include"driver.h"
 #include"monitor.h"
 #include<systemc.h>
