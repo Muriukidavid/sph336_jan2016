@@ -7,7 +7,7 @@ extern struct que q;
 void insert (char element){
 	if(q.rear==MAX-1){
 			printf("\nQueue is Full\n");
-			
+			return;
 	}
 	else 
 		if(q.front==-1){
