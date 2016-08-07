@@ -5,7 +5,7 @@
  *  Author: Monyoncho M Dominic
  */
 
-#ifndef DECODER_H_:
+#ifndef DECODER_H_
 #define DECODER_H_
 #include "systemc.h"
 
@@ -25,10 +25,11 @@ SC_MODULE (decoder) {
 	}
 
 	void decode(void){
-		out1=in1&&in2;
-		out2=in1&&!in2;
-		out3=!in1&&in2;
-		out4=!in1&&!in2;
+
+		 b=(a==0)?1:0;
+	     c=(a==1)?1:0;
+
+		
 	}
 };
 
