@@ -1,9 +1,17 @@
 $date
+<<<<<<< HEAD
      Mar 16, 2016       21:17:42
 $end
 
 $version
  SystemC 2.3.1-Accellera --- Mar  9 2016 23:52:46
+=======
+     Mar 23, 2016       20:40:04
+$end
+
+$version
+ SystemC 2.3.1-Accellera --- Mar  3 2016 12:07:36
+>>>>>>> 114be63e1647a4a92cf190ac08eaa1c448ccf493
 $end
 
 $timescale
@@ -12,8 +20,13 @@ $end
 
 $scope module SystemC $end
 $var wire    1  aaaaa  binary_input       $end
+<<<<<<< HEAD
 $var wire    1  aaaab  input_is_zero       $end
 $var wire    1  aaaac  input_is_one       $end
+=======
+$var wire    1  aaaab  output1       $end
+$var wire    1  aaaac  output2       $end
+>>>>>>> 114be63e1647a4a92cf190ac08eaa1c448ccf493
 $upscope $end
 $enddefinitions  $end
 
